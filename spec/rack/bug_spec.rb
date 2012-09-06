@@ -10,7 +10,7 @@ describe Rack::Bug do
     response = get "/"
     body = response.body 
     content_length = body.respond_to?(:bytesize) ? body.bytesize : body.size
-    response["Content-Length"].should == content_length
+    response["Content-Length"].to_i.should equal content_length
   end
 
   it "serves the Rack::Bug assets under /__rack_bug__/" do
