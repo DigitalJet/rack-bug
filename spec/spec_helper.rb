@@ -1,5 +1,5 @@
 require "rubygems"
-require "spec"
+require "rspec"
 require "webrat"
 require "rack/test"
 
@@ -13,7 +13,7 @@ require "spec/fixtures/sample_app"
 require "spec/fixtures/dummy_panel"
 require "spec/custom_matchers"
 
-Spec::Runner.configure do |config|
+RSpec.configure do |config|
   TIME_MS_REGEXP = /\d+\.\d{2}ms/
 
   config.include Rack::Test::Methods

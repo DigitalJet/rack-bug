@@ -1,15 +1,15 @@
 require "rubygems"
-require "spec/rake/spectask"
+require "rspec/core/rake_task"
 
-Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
+RSpec::Core::RakeTask.new do |spec|
+	spec.rspec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
 end
 
 desc "Run all specs in spec directory with RCov"
-Spec::Rake::SpecTask.new(:rcov) do |t|
-  t.spec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
-  t.rcov = true
-  t.rcov_opts = lambda do
+RSpec::Core::RakeTask.new(:rcov) do |spec|
+	spec.rspec_opts = ['--options', "\"#{File.dirname(__FILE__)}/spec/spec.opts\""]
+	spec.rcov = true
+	spec.rcov_opts = lambda do
     IO.readlines(File.dirname(__FILE__) + "/spec/rcov.opts").map {|l| l.chomp.split " "}.flatten
   end
 end

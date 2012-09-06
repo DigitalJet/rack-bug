@@ -5,14 +5,14 @@ module GemHelpers
     require "rack/bug"
 
     Gem::Specification.new do |s|
-      s.name      = "rack-bug"
+      s.name      = "rack-bug3"
       s.version   = Rack::Bug::VERSION
-      s.author    = "Bryan Helmkamp"
-      s.email     = "bryan@brynary.com"
-      s.homepage  = "http://github.com/brynary/rack-bug"
+      s.author    = ["Bryan Helmkamp", "Paul Vitty"]
+      s.email     = ["bryan@brynary.com", "p.vitty@me.com"]
+      s.homepage  = "https://github.com/DigitalJet/rack-bug"
       s.summary   = "Debugging toolbar for Rack applications implemented as middleware"
       # s.description  = "TODO"
-      s.rubyforge_project = "rack-bug"
+      s.rubyforge_project = "rack-bug3"
 
       require "git"
       repo = Git.open(".")

@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{rack-bug}
+  s.name = "rack-bug"
   s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Bryan Helmkamp"]
-  s.date = %q{2010-09-03}
-  s.email = %q{bryan@brynary.com}
+  s.authors = ["Bryan Helmkamp", "Paul Vitty"]
+  s.date = "2012-09-06"
+  s.email = ["bryan@brynary.com", "p.vitty@me.com"]
   s.extra_rdoc_files = [
     "README.md",
     "MIT-LICENSE.txt"
@@ -28,12 +28,16 @@ Gem::Specification.new do |s|
     "lib/rack/bug/panels/active_record_panel.rb",
     "lib/rack/bug/panels/active_record_panel/activerecord_extensions.rb",
     "lib/rack/bug/panels/cache_panel.rb",
+    "lib/rack/bug/panels/cache_panel/dalli_extension.rb",
     "lib/rack/bug/panels/cache_panel/memcache_extension.rb",
     "lib/rack/bug/panels/cache_panel/panel_app.rb",
     "lib/rack/bug/panels/cache_panel/stats.rb",
     "lib/rack/bug/panels/log_panel.rb",
     "lib/rack/bug/panels/log_panel/logger_extension.rb",
     "lib/rack/bug/panels/memory_panel.rb",
+    "lib/rack/bug/panels/mongo_panel.rb",
+    "lib/rack/bug/panels/mongo_panel/mongo_extension.rb",
+    "lib/rack/bug/panels/mongo_panel/stats.rb",
     "lib/rack/bug/panels/rails_info_panel.rb",
     "lib/rack/bug/panels/redis_panel.rb",
     "lib/rack/bug/panels/redis_panel/redis_extension.rb",
@@ -69,6 +73,7 @@ Gem::Specification.new do |s|
     "lib/rack/bug/views/panels/execute_sql.html.erb",
     "lib/rack/bug/views/panels/explain_sql.html.erb",
     "lib/rack/bug/views/panels/log.html.erb",
+    "lib/rack/bug/views/panels/mongo.html.erb",
     "lib/rack/bug/views/panels/profile_sql.html.erb",
     "lib/rack/bug/views/panels/rails_info.html.erb",
     "lib/rack/bug/views/panels/redis.html.erb",
@@ -81,6 +86,7 @@ Gem::Specification.new do |s|
     "lib/rack/bug/views/redirect.html.erb",
     "lib/rack/bug/views/toolbar.html.erb",
     "rack-bug.gemspec",
+    "spec/custom_matchers.rb",
     "spec/fixtures/config.ru",
     "spec/fixtures/dummy_panel.rb",
     "spec/fixtures/sample_app.rb",
@@ -88,6 +94,7 @@ Gem::Specification.new do |s|
     "spec/rack/bug/panels/cache_panel_spec.rb",
     "spec/rack/bug/panels/log_panel_spec.rb",
     "spec/rack/bug/panels/memory_panel_spec.rb",
+    "spec/rack/bug/panels/mongo_panel_spec.rb",
     "spec/rack/bug/panels/rails_info_panel_spec.rb",
     "spec/rack/bug/panels/redis_panel_spec.rb",
     "spec/rack/bug/panels/sql_panel_spec.rb",
@@ -98,18 +105,20 @@ Gem::Specification.new do |s|
     "spec/spec.opts",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/brynary/rack-bug}
+  s.homepage = "https://github.com/DigitalJet/rack-bug"
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{rack-bug}
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Debugging toolbar for Rack applications implemented as middleware}
+  s.rubyforge_project = "rack-bug"
+  s.rubygems_version = "1.8.24"
+  s.summary = "Debugging toolbar for Rack applications implemented as middleware"
   s.test_files = [
+    "spec/custom_matchers.rb",
     "spec/fixtures/dummy_panel.rb",
     "spec/fixtures/sample_app.rb",
     "spec/rack/bug/panels/active_record_panel_spec.rb",
     "spec/rack/bug/panels/cache_panel_spec.rb",
     "spec/rack/bug/panels/log_panel_spec.rb",
     "spec/rack/bug/panels/memory_panel_spec.rb",
+    "spec/rack/bug/panels/mongo_panel_spec.rb",
     "spec/rack/bug/panels/rails_info_panel_spec.rb",
     "spec/rack/bug/panels/redis_panel_spec.rb",
     "spec/rack/bug/panels/sql_panel_spec.rb",
@@ -120,7 +129,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
