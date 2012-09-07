@@ -1,7 +1,7 @@
-Rack::Bug [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/brynary/rack-bug)
+Rack::Bug [[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/DigitalJet/rack-bug) [![Build Status](https://secure.travis-ci.org/DigitalJet/rack-bug.png)](http://travis-ci.org/DigitalJet/rack-bug)
 =========
 
-* Repository: [http://github.com/brynary/rack-bug](http://github.com/brynary/rack-bug)
+* Repository: [http://github.com/DigitalJet/rack-bug](http://github.com/DigitalJet/rack-bug)
 
 Description
 -----------
@@ -35,11 +35,11 @@ Rails quick start
 
 Install as plugins
 
-    rails plugin install git://github.com/brynary/rack-bug.git -r rails3
+    rails plugin install git://github.com/DigitalJet/rack-bug.git -r rails3
 
 Or install via bundler
 
-    gem 'rack-bug', :require => 'rack/bug', :git => 'git://github.com/brynary/rack-bug.git', :branch => 'rails3'
+    gem 'rack-bug', :require => 'rack/bug', :git => 'git://github.com/DigitalJet/rack-bug.git', :branch => 'rails3'
 
 In config/environments/development.rb, add:
 
