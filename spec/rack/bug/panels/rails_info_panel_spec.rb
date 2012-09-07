@@ -22,15 +22,15 @@ class Rack::Bug
 
     describe "heading" do
       it "displays the Rails version" do
-        Rails.stub!(:version => "v2.3.0")
+        Rails.stub!(:version => "v3.2.6")
         response = get_via_rack "/"
-        response.should have_heading("Rails v2.3.0")
+        response.should have_heading("Rails v3.2.6")
       end
     end
 
     describe "content" do
       it "displays the Rails::Info properties" do
-        Rails.stub!(:version => "v2.3.0")
+        Rails.stub!(:version => "v3.2.6")
         Rails::Info.stub!(:properties => [["Name", "Value"]])
         response = get_via_rack "/"
         response.should have_row("#rails_info", "Name", "Value")

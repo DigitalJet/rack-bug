@@ -1,12 +1,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "rack-bug"
+  s.name = "rack-bug3"
   s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bryan Helmkamp", "Paul Vitty"]
-  s.date = "2012-09-06"
+  s.date = "2012-09-07"
   s.email = ["bryan@brynary.com", "p.vitty@me.com"]
   s.extra_rdoc_files = [
     "README.md",
@@ -14,6 +14,9 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
+    "Gemfile",
+    "Gemfile.lock",
+    "Guardfile",
     "History.txt",
     "MIT-LICENSE.txt",
     "README.md",
@@ -107,7 +110,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "https://github.com/DigitalJet/rack-bug"
   s.require_paths = ["lib"]
-  s.rubyforge_project = "rack-bug"
+  s.rubyforge_project = "rack-bug3"
   s.rubygems_version = "1.8.24"
   s.summary = "Debugging toolbar for Rack applications implemented as middleware"
   s.test_files = [
@@ -134,21 +137,30 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rack>, [">= 1.0"])
       s.add_development_dependency(%q<webrat>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, [">= 0"])
+      s.add_development_dependency(%q<rspec>, [">= 2.0"])
       s.add_development_dependency(%q<sinatra>, [">= 0"])
       s.add_development_dependency(%q<git>, [">= 0"])
+      s.add_development_dependency(%q<guard-rspec>, [">= 0"])
+      s.add_development_dependency(%q<growl>, [">= 0"])
+      s.add_development_dependency(%q<rb-fsevent>, [">= 0.9.1"])
     else
       s.add_dependency(%q<rack>, [">= 1.0"])
       s.add_dependency(%q<webrat>, [">= 0"])
-      s.add_dependency(%q<rspec>, [">= 0"])
+      s.add_dependency(%q<rspec>, [">= 2.0"])
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<git>, [">= 0"])
+      s.add_dependency(%q<guard-rspec>, [">= 0"])
+      s.add_dependency(%q<growl>, [">= 0"])
+      s.add_dependency(%q<rb-fsevent>, [">= 0.9.1"])
     end
   else
     s.add_dependency(%q<rack>, [">= 1.0"])
     s.add_dependency(%q<webrat>, [">= 0"])
-    s.add_dependency(%q<rspec>, [">= 0"])
+    s.add_dependency(%q<rspec>, [">= 2.0"])
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<git>, [">= 0"])
+    s.add_dependency(%q<guard-rspec>, [">= 0"])
+    s.add_dependency(%q<growl>, [">= 0"])
+    s.add_dependency(%q<rb-fsevent>, [">= 0.9.1"])
   end
 end

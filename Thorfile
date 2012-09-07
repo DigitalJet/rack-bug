@@ -25,9 +25,13 @@ module GemHelpers
 
       s.add_dependency "rack", ">= 1.0"
       s.add_development_dependency "webrat"
-      s.add_development_dependency "rspec"
+      s.add_development_dependency "rspec", ">=2.0"
       s.add_development_dependency "sinatra"
       s.add_development_dependency "git"
+			s.add_development_dependency "guard-rspec"
+			s.add_development_dependency "growl"
+			s.add_development_dependency "redis"
+			s.add_development_dependency "rb-fsevent", ">=0.9.1"
     end
   end
 

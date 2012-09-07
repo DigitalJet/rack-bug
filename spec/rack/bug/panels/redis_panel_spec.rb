@@ -26,7 +26,7 @@ class Rack::Bug
 
           response.should have_row("#redis_usage", "Total Calls", "1")
         end
-
+        
         it "displays the total redis time" do
           response = get_via_rack "/"
           response.should have_row("#redis_usage", "Total Time", "0.00ms")
